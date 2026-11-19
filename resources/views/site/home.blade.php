@@ -1,0 +1,9 @@
+<x-layouts.site>
+    @include('site.home.hero')
+    @include('site.home.trust-indicators')
+    @include('site.home.services-overview')
+    @include('site.home.featured-projects')
+    @include('site.home.why-choose-us')
+    @include('site.home.testimonials')
+    @include('site.home.process')
+</x-layouts.site>
