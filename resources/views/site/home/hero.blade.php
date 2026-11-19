@@ -10,7 +10,7 @@
     {{-- Background image --}}
     <div class="absolute inset-0">
         <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+            src="/images/unsplash/photo-1600585154340-be6161a56a0c.jpg"
             alt="Luxury home exterior"
             class="h-full w-full object-cover"
         >

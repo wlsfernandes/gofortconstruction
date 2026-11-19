@@ -33,7 +33,7 @@ class ProjectSeeder extends Seeder
                     'location' => $location,
                     'category' => $category,
                     'short_description' => $shortDescription,
-                    'featured_image' => "https://images.unsplash.com/{$unsplashPhotoId}?w=800&q=80",
+                    'featured_image' => "/images/unsplash/{$unsplashPhotoId}.jpg",
                     'is_featured' => $position < self::FEATURED_PROJECT_COUNT,
                 ],
             );

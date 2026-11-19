@@ -23,7 +23,7 @@
 <x-layouts.site title="Blog">
     {{-- Hero Section --}}
     <x-page-hero
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+        image="/images/unsplash/photo-1600585154340-be6161a56a0c.jpg"
         image-alt="Blog"
         eyebrow="Blog"
         title="Insights & Inspiration"

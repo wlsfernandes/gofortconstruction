@@ -6,7 +6,7 @@
             'title' => 'Deck Construction',
             'description' => 'Custom-designed decks that extend your living space and enhance your outdoor lifestyle.',
             'longDescription' => 'Transform your backyard into an outdoor oasis with a custom-designed deck from Fort Construction. We specialize in creating beautiful, durable decks using premium materials like composite decking, pressure-treated lumber, and exotic hardwoods. Whether you envision a multi-level entertainment space or a cozy retreat, we bring your vision to life with expert craftsmanship.',
-            'image' => 'https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=1200&q=80',
+            'image' => '/images/unsplash/photo-1591825729269-caeb344f6df2.jpg',
             'features' => [
                 'Custom design consultation',
                 'Premium material selection',
@@ -27,7 +27,7 @@
             'title' => 'Kitchen Remodeling',
             'description' => 'Create the heart of your home with stunning kitchen renovations that combine style and function.',
             'longDescription' => 'The kitchen is where families gather, memories are made, and culinary dreams come true. Our kitchen remodeling services transform outdated spaces into stunning, functional kitchens that you\'ll love for years to come. From cabinet installation to countertop selection, we handle every detail with precision and care.',
-            'image' => 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80',
+            'image' => '/images/unsplash/photo-1556909114-f6e7ad7d3136.jpg',
             'features' => [
                 'Custom cabinetry',
                 'Countertop installation',
@@ -50,7 +50,7 @@
             'title' => 'Bathroom Remodeling',
             'description' => 'Transform your bathroom into a personal spa retreat with elegant fixtures and finishes.',
             'longDescription' => 'Create your own private sanctuary with a bathroom renovation from Fort Construction. We specialize in transforming ordinary bathrooms into luxurious retreats featuring modern fixtures, elegant tile work, and spa-like amenities. Whether you\'re updating a powder room or creating a master suite, we deliver exceptional results.',
-            'image' => 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=80',
+            'image' => '/images/unsplash/photo-1552321554-5fefe8c9ef14.jpg',
             'features' => [
                 'Shower and tub installation',
                 'Custom tile work',
@@ -73,7 +73,7 @@
             'title' => 'Outdoor Living',
             'description' => 'Extend your living space with patios, pergolas, outdoor kitchens, and more.',
             'longDescription' => 'Make the most of Georgia\'s beautiful weather with custom outdoor living spaces. From covered patios and pergolas to fully equipped outdoor kitchens and fire features, we create outdoor environments perfect for relaxation and entertainment. Let us help you design the outdoor space of your dreams.',
-            'image' => 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80',
+            'image' => '/images/unsplash/photo-1600566753190-17f0baa2a6c3.jpg',
             'features' => [
                 'Covered patios and pergolas',
                 'Outdoor kitchens',
@@ -96,7 +96,7 @@
             'title' => 'Home Renovations',
             'description' => 'Complete home transformations that increase value and improve daily living.',
             'longDescription' => 'Whether you\'re updating a single room or renovating your entire home, Fort Construction delivers exceptional results. Our comprehensive renovation services include everything from structural modifications to finish work. We work closely with you to understand your vision and bring it to life while staying on budget and schedule.',
-            'image' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
+            'image' => '/images/unsplash/photo-1600607687939-ce8a6c25118c.jpg',
             'features' => [
                 'Whole-home renovations',
                 'Room additions',
@@ -118,7 +118,7 @@
             'title' => 'Custom Projects',
             'description' => 'Unique solutions tailored to your specific needs and vision.',
             'longDescription' => 'Have a unique project in mind? We love tackling custom projects that challenge our creativity and showcase our craftsmanship. From built-in furniture and specialty trim work to unique architectural features, our team has the skills and experience to bring your custom vision to life.',
-            'image' => 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80',
+            'image' => '/images/unsplash/photo-1600585154526-990dced4db0d.jpg',
             'features' => [
                 'Custom built-ins',
                 'Specialty millwork',
@@ -143,7 +143,7 @@
 
 <x-layouts.site title="Services">
     <x-page-hero
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+        image="/images/unsplash/photo-1600585154340-be6161a56a0c.jpg"
         image-alt="Services"
         eyebrow="Our Services"
         title="Premium Construction Services"

@@ -21,7 +21,7 @@
 
 <x-layouts.site title="Service Areas">
     <x-page-hero
-        image="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=80"
+        image="/images/unsplash/photo-1449824913935-59a10b8d2000.jpg"
         image-alt="North Atlanta"
         eyebrow="Where We Work"
         title="Service Areas"

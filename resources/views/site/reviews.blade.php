@@ -10,7 +10,7 @@
 <x-layouts.site title="Reviews">
     {{-- Hero Section --}}
     <x-page-hero
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+        image="/images/unsplash/photo-1600585154340-be6161a56a0c.jpg"
         image-alt="Reviews"
         eyebrow="Testimonials"
         title="What Our Clients Say"
@@ -50,7 +50,7 @@
                         rel="noopener noreferrer"
                         class="inline-flex items-center gap-2 rounded-full bg-blue-50 px-6 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-100"
                     >
-                        <img src="https://www.google.com/favicon.ico" alt="Google" class="size-5">
+                        <img src="/images/google.ico" alt="Google" class="size-5">
                         See Our Google Reviews
                         <x-icon name="external-link" class="size-4" />
                     </a>
@@ -102,7 +102,7 @@
                                     </div>
                                 </div>
                                 @if ($testimonial->source === TestimonialSource::Google)
-                                    <img src="https://www.google.com/favicon.ico" alt="Google" class="size-5 opacity-50">
+                                    <img src="/images/google.ico" alt="Google" class="size-5 opacity-50">
                                 @endif
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 <x-layouts.site title="Projects">
     <x-page-hero
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+        image="/images/unsplash/photo-1600585154340-be6161a56a0c.jpg"
         image-alt="Projects"
         eyebrow="Our Portfolio"
         title="Featured Projects"

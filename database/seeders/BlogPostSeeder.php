@@ -24,7 +24,7 @@ class BlogPostSeeder extends Seeder
                     'title' => $title,
                     'category' => $category,
                     'publish_date' => $publishDate,
-                    'featured_image' => "https://images.unsplash.com/{$unsplashPhotoId}?w=800&q=80",
+                    'featured_image' => "/images/unsplash/{$unsplashPhotoId}.jpg",
                     'excerpt' => $excerpt,
                     // The prototype had no article bodies; the excerpt stands in until real posts are written.
                     'content' => $excerpt,

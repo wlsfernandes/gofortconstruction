@@ -17,7 +17,7 @@
 <x-layouts.site title="FAQ">
     {{-- Hero Section --}}
     <x-page-hero
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+        image="/images/unsplash/photo-1600585154340-be6161a56a0c.jpg"
         image-alt="FAQ"
         eyebrow="FAQ"
         title="Frequently Asked Questions"

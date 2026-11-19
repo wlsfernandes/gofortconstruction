@@ -39,7 +39,7 @@
             <div class="relative">
                 <div class="relative overflow-hidden rounded-2xl">
                     <img
-                        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+                        src="/images/unsplash/photo-1600585154340-be6161a56a0c.jpg"
                         alt="Quality craftsmanship"
                         class="h-[500px] w-full object-cover"
                     >

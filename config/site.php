@@ -17,8 +17,7 @@ return [
     // Inbox that receives new estimate requests from the contact form.
     'contact_recipient' => env('CONTACT_RECIPIENT_EMAIL', 'Support@GoFortConstruction.com'),
     'service_area' => 'North Atlanta, GA',
-    // Still hosted on Base44 storage; self-hosting is planned in a later step.
-    'logo_url' => 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69a8b61790b46297358319ac/e74323663_FortConstructionLogo.png',
+    'logo_url' => '/images/fort-construction-logo.png',
     'social_links' => [
         'facebook' => 'https://facebook.com/',
         'instagram' => 'http://instagram.com/fort_construction',

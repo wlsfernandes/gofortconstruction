@@ -1,11 +1,11 @@
 @php
     $homeServices = [
-        ['title' => 'Deck Construction', 'description' => 'Custom-designed decks using premium materials for lasting beauty and durability.', 'image' => 'https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=800&q=80', 'slug' => 'deck'],
-        ['title' => 'Kitchen Remodeling', 'description' => 'Transform your kitchen into a stunning, functional space that elevates your home.', 'image' => 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80', 'slug' => 'kitchen'],
-        ['title' => 'Bathroom Remodeling', 'description' => 'Create your personal spa retreat with modern fixtures and elegant finishes.', 'image' => 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80', 'slug' => 'bathroom'],
-        ['title' => 'Outdoor Living', 'description' => 'Expand your living space with patios, pergolas, and outdoor entertainment areas.', 'image' => 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80', 'slug' => 'outdoor-living'],
-        ['title' => 'Home Renovations', 'description' => 'Complete home transformations that increase value and improve daily living.', 'image' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80', 'slug' => 'renovation'],
-        ['title' => 'Custom Projects', 'description' => 'Unique solutions tailored to your specific needs and vision.', 'image' => 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80', 'slug' => 'custom'],
+        ['title' => 'Deck Construction', 'description' => 'Custom-designed decks using premium materials for lasting beauty and durability.', 'image' => '/images/unsplash/photo-1591825729269-caeb344f6df2.jpg', 'slug' => 'deck'],
+        ['title' => 'Kitchen Remodeling', 'description' => 'Transform your kitchen into a stunning, functional space that elevates your home.', 'image' => '/images/unsplash/photo-1556909114-f6e7ad7d3136.jpg', 'slug' => 'kitchen'],
+        ['title' => 'Bathroom Remodeling', 'description' => 'Create your personal spa retreat with modern fixtures and elegant finishes.', 'image' => '/images/unsplash/photo-1552321554-5fefe8c9ef14.jpg', 'slug' => 'bathroom'],
+        ['title' => 'Outdoor Living', 'description' => 'Expand your living space with patios, pergolas, and outdoor entertainment areas.', 'image' => '/images/unsplash/photo-1600566753190-17f0baa2a6c3.jpg', 'slug' => 'outdoor-living'],
+        ['title' => 'Home Renovations', 'description' => 'Complete home transformations that increase value and improve daily living.', 'image' => '/images/unsplash/photo-1600607687939-ce8a6c25118c.jpg', 'slug' => 'renovation'],
+        ['title' => 'Custom Projects', 'description' => 'Unique solutions tailored to your specific needs and vision.', 'image' => '/images/unsplash/photo-1600585154526-990dced4db0d.jpg', 'slug' => 'custom'],
     ];
 @endphp
 
