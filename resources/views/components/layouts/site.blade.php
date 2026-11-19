@@ -162,7 +162,7 @@
 
         <div class="py-16">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+                <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-[repeat(3,minmax(0,1fr))_auto]">
                     <div>
                         <div class="mb-6 flex h-10 items-center">
                             <img src="{{ config('site.logo_url') }}" alt="Fort Construction Logo" class="h-full object-contain">
@@ -213,7 +213,7 @@
                         <ul class="space-y-4">
                             <li>
                                 <a href="tel:{{ config('site.phone_dial') }}" class="flex items-center gap-3 text-gray-400 transition-colors hover:text-orange-400">
-                                    <div class="flex size-10 items-center justify-center rounded-full bg-orange-500/20">
+                                    <div class="flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-orange-500/20">
                                         <x-icon name="phone" class="size-5 text-orange-500" />
                                     </div>
                                     <div>
@@ -224,18 +224,18 @@
                             </li>
                             <li>
                                 <a href="mailto:{{ config('site.email') }}" class="flex items-center gap-3 text-gray-400 transition-colors hover:text-orange-400">
-                                    <div class="flex size-10 items-center justify-center rounded-full bg-orange-500/20">
+                                    <div class="flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-orange-500/20">
                                         <x-icon name="mail" class="size-5 text-orange-500" />
                                     </div>
                                     <div class="min-w-0">
                                         <div class="text-xs text-gray-500">Email Us</div>
-                                        <div class="text-sm break-all text-white">{{ config('site.email') }}</div>
+                                        <div class="text-sm break-words text-white">{{ Str::before(config('site.email'), '@') }}@<wbr>{{ Str::after(config('site.email'), '@') }}</div>
                                     </div>
                                 </a>
                             </li>
                             <li>
                                 <div class="flex items-center gap-3">
-                                    <div class="flex size-10 items-center justify-center rounded-full bg-orange-500/20">
+                                    <div class="flex size-10 flex-shrink-0 items-center justify-center rounded-full bg-orange-500/20">
                                         <x-icon name="map-pin" class="size-5 text-orange-500" />
                                     </div>
                                     <div>
