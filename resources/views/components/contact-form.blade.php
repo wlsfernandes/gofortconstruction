@@ -19,6 +19,13 @@
     <form method="POST" action="{{ route('contact.store') }}" class="space-y-4" x-data="{ isSubmitting: false }" x-on:submit="isSubmitting = true">
         @csrf
 
+        {{-- Anti-spam: a honeypot people never see, and the encrypted time the form was first shown. --}}
+        <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+            <label for="{{ \App\Http\Requests\StoreContactSubmissionRequest::HONEYPOT_FIELD }}">Leave this field empty</label>
+            <input id="{{ \App\Http\Requests\StoreContactSubmissionRequest::HONEYPOT_FIELD }}" name="{{ \App\Http\Requests\StoreContactSubmissionRequest::HONEYPOT_FIELD }}" type="text" value="" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" name="{{ \App\Http\Requests\StoreContactSubmissionRequest::STARTED_AT_FIELD }}" value="{{ old(\App\Http\Requests\StoreContactSubmissionRequest::STARTED_AT_FIELD) ?? \App\Http\Requests\StoreContactSubmissionRequest::startedAtToken() }}">
+
         <div class="grid gap-4 md:grid-cols-2">
             <div>
                 <label for="name" class="mb-1.5 block text-sm font-medium text-gray-700">Full Name *</label>
