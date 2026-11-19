@@ -33,12 +33,12 @@ php artisan serve
 
 Run the tests with `php artisan test` (they use in-memory SQLite and need no database setup).
 
-To run the same suite against PostgreSQL, point it at a separate, empty test database. Values set
-in the shell override the SQLite settings in `phpunit.xml`; the suite wipes that database on every run:
+To run the same suite against PostgreSQL, use the separate `fortify_testing` database owned by the
+`fortify_test` role. The suite wipes that database on every run, so never point it at real data.
+The password is read from your shell, not stored in the repository:
 
 ```bash
-DB_CONNECTION=pgsql DB_HOST=127.0.0.1 DB_DATABASE=fortify_testing \
-DB_USERNAME=fortify_test DB_PASSWORD=your-test-password php artisan test
+FORTIFY_TEST_DB_PASSWORD=your-test-password composer test:pgsql
 ```
 
 ## Deploying to production

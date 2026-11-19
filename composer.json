@@ -49,6 +49,16 @@
             "@php artisan config:clear --ansi @no_additional_args",
             "@php artisan test"
         ],
+        "test:pgsql": [
+            "test -n \"$FORTIFY_TEST_DB_PASSWORD\" || { echo 'Set FORTIFY_TEST_DB_PASSWORD to the fortify_test role password first.' >&2; exit 1; }",
+            "@putenv DB_CONNECTION=pgsql",
+            "@putenv DB_HOST=127.0.0.1",
+            "@putenv DB_PORT=5432",
+            "@putenv DB_DATABASE=fortify_testing",
+            "@putenv DB_USERNAME=fortify_test",
+            "@php artisan config:clear --ansi @no_additional_args",
+            "DB_PASSWORD=\"$FORTIFY_TEST_DB_PASSWORD\" php artisan test"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
@@ -83,5 +93,8 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "scripts-descriptions": {
+        "test:pgsql": "Run the tests against the fortify_testing PostgreSQL database (wiped on every run). Needs FORTIFY_TEST_DB_PASSWORD in the shell."
+    }
 }
