@@ -114,4 +114,20 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Initial Administrator
+    |--------------------------------------------------------------------------
+    |
+    | Account created by AdminUserSeeder. Public registration is disabled,
+    | so this is how the first administrator gets into the admin area.
+    |
+    */
+
+    'initial_admin' => [
+        'name' => env('ADMIN_NAME', 'Site Administrator'),
+        'email' => env('ADMIN_EMAIL'),
+        'password' => env('ADMIN_PASSWORD'),
+    ],
+
 ];
