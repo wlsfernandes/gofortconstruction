@@ -110,14 +110,14 @@
 
                 {{-- Contact Form --}}
                 <div>
-                    <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-xl">
+                    <div id="request-estimate" class="scroll-mt-24 rounded-2xl border border-gray-100 bg-white p-8 shadow-xl">
                         <h3 class="mb-2 text-2xl font-bold text-gray-900">
                             Request Free Estimate
                         </h3>
                         <p class="mb-6 text-gray-600">
                             Fill out the form below and we'll get back to you within 24 hours.
                         </p>
-                        {{-- Contact form: added in the contact form step. --}}
+                        <x-contact-form />
                     </div>
                 </div>
             </div>

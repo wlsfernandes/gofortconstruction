@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Site\BlogPostController;
+use App\Http\Controllers\Site\ContactSubmissionController;
 use App\Http\Controllers\Site\FaqController;
 use App\Http\Controllers\Site\HomeController;
 use App\Http\Controllers\Site\ProjectController;
@@ -20,6 +21,9 @@ Route::get('/service-areas', ServiceAreaController::class)->name('service-areas'
 Route::get('/blog', [BlogPostController::class, 'index'])->name('blog.index');
 Route::get('/blog/{post:slug}', [BlogPostController::class, 'show'])->name('blog.show');
 Route::view('/contact', 'site.contact')->name('contact');
+Route::post('/contact', [ContactSubmissionController::class, 'store'])
+    ->middleware('throttle:contact-form')
+    ->name('contact.store');
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function (): void {
     Route::view('/', 'admin.dashboard')->name('dashboard');
