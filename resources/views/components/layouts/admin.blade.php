@@ -9,6 +9,7 @@
         ['label' => 'Testimonials', 'route' => 'admin.testimonials.index', 'active' => 'admin.testimonials.*'],
         ['label' => 'FAQs', 'route' => 'admin.faqs.index', 'active' => 'admin.faqs.*'],
         ['label' => 'Service areas', 'route' => 'admin.service-areas.index', 'active' => 'admin.service-areas.*'],
+        ['label' => 'Settings', 'route' => 'admin.settings.edit', 'active' => 'admin.settings.*'],
     ];
 @endphp
 

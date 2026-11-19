@@ -7,6 +7,7 @@ use App\Models\Faq;
 use App\Models\Project;
 use App\Models\ServiceArea;
 use App\Models\Testimonial;
+use App\Models\User;
 use Database\Seeders\SampleContentSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -171,5 +172,23 @@ class PublicPagesTest extends TestCase
     public function test_navigation_marks_the_current_page(): void
     {
         $this->get('/about')->assertSee('aria-current="page"', false);
+    }
+
+    public function test_guests_see_a_login_link_in_the_top_bar(): void
+    {
+        $this->get('/')->assertSee('href="'.route('login').'"', false);
+    }
+
+    public function test_signed_in_users_see_a_logout_button_instead_of_the_login_link(): void
+    {
+        $this->actingAs(User::factory()->create())
+            ->get('/')
+            ->assertDontSee('href="'.route('login').'"', false)
+            ->assertSee('action="'.route('logout').'"', false);
+    }
+
+    public function test_guests_do_not_see_the_logout_button(): void
+    {
+        $this->get('/')->assertDontSee('action="'.route('logout').'"', false);
     }
 }

@@ -25,6 +25,7 @@ class AdminAccessTest extends TestCase
             'testimonials' => ['/admin/testimonials'],
             'faqs' => ['/admin/faqs'],
             'service areas' => ['/admin/service-areas'],
+            'site settings' => ['/admin/settings'],
         ];
     }
 

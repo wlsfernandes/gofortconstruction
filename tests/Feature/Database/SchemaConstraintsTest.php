@@ -96,9 +96,9 @@ class SchemaConstraintsTest extends TestCase
 
     public function test_content_migrations_roll_back_and_reapply(): void
     {
-        $contentTables = ['projects', 'blog_posts', 'testimonials', 'faqs', 'service_areas', 'contact_submissions'];
+        $contentTables = ['projects', 'blog_posts', 'testimonials', 'faqs', 'service_areas', 'contact_submissions', 'site_settings'];
 
-        Artisan::call('migrate:rollback', ['--step' => 7]);
+        Artisan::call('migrate:rollback', ['--step' => 8]);
 
         foreach ($contentTables as $table) {
             $this->assertFalse(Schema::hasTable($table), "{$table} should be dropped");

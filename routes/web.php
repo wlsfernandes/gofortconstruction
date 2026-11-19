@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Admin\ServiceAreaController as AdminServiceAreaController;
+use App\Http\Controllers\Admin\SiteSettingsController as AdminSiteSettingsController;
 use App\Http\Controllers\Admin\TestimonialController as AdminTestimonialController;
 use App\Http\Controllers\Site\BlogPostController;
 use App\Http\Controllers\Site\ContactSubmissionController;
@@ -40,4 +41,6 @@ Route::middleware(['auth', 'can:manage-site'])->prefix('admin')->name('admin.')-
     Route::resource('testimonials', AdminTestimonialController::class)->except('show');
     Route::resource('faqs', AdminFaqController::class)->except('show');
     Route::resource('service-areas', AdminServiceAreaController::class)->except('show');
+    Route::get('settings', [AdminSiteSettingsController::class, 'edit'])->name('settings.edit');
+    Route::put('settings', [AdminSiteSettingsController::class, 'update'])->name('settings.update');
 });

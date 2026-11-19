@@ -17,6 +17,7 @@ return [
     // Inbox that receives new estimate requests from the contact form.
     'contact_recipient' => env('CONTACT_RECIPIENT_EMAIL', 'Support@GoFortConstruction.com'),
     'service_area' => 'North Atlanta, GA',
+    'service_area_tagline' => 'Serving North Atlanta & Surrounding Areas',
     'logo_url' => '/images/fort-construction-logo.png',
     'social_links' => [
         'facebook' => 'https://facebook.com/',

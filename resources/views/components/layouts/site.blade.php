@@ -51,9 +51,25 @@
                     <span>{{ config('site.email') }}</span>
                 </a>
             </div>
-            <div class="flex items-center gap-2">
-                <x-icon name="map-pin" class="size-4 text-orange-500" />
-                <span>Serving North Atlanta &amp; Surrounding Areas</span>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <x-icon name="map-pin" class="size-4 text-orange-500" />
+                    <span>{{ config('site.service_area_tagline') }}</span>
+                </div>
+                @guest
+                    <a href="{{ route('login') }}" class="flex items-center gap-1.5 text-xs text-gray-500 transition-colors hover:text-gray-300">
+                        <x-icon name="user" class="size-4 text-orange-500" />
+                        Login
+                    </a>
+                @else
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="flex items-center gap-1.5 text-xs text-gray-500 transition-colors hover:text-gray-300">
+                            <x-icon name="user" class="size-4 text-orange-500" />
+                            Logout
+                        </button>
+                    </form>
+                @endguest
             </div>
         </div>
     </div>
