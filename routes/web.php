@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\BlogPostController as AdminBlogPostController;
+use App\Http\Controllers\Admin\ContactSubmissionController as AdminContactSubmissionController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\FaqController as AdminFaqController;
+use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
+use App\Http\Controllers\Admin\ServiceAreaController as AdminServiceAreaController;
+use App\Http\Controllers\Admin\TestimonialController as AdminTestimonialController;
 use App\Http\Controllers\Site\BlogPostController;
 use App\Http\Controllers\Site\ContactSubmissionController;
 use App\Http\Controllers\Site\FaqController;
@@ -25,6 +32,12 @@ Route::post('/contact', [ContactSubmissionController::class, 'store'])
     ->middleware('throttle:contact-form')
     ->name('contact.store');
 
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function (): void {
-    Route::view('/', 'admin.dashboard')->name('dashboard');
+Route::middleware(['auth', 'can:manage-site'])->prefix('admin')->name('admin.')->group(function (): void {
+    Route::get('/', AdminDashboardController::class)->name('dashboard');
+    Route::resource('contact-submissions', AdminContactSubmissionController::class)->only(['index', 'show', 'update']);
+    Route::resource('projects', AdminProjectController::class)->except('show');
+    Route::resource('blog-posts', AdminBlogPostController::class)->except('show');
+    Route::resource('testimonials', AdminTestimonialController::class)->except('show');
+    Route::resource('faqs', AdminFaqController::class)->except('show');
+    Route::resource('service-areas', AdminServiceAreaController::class)->except('show');
 });

@@ -9,4 +9,9 @@ enum ContactStatus: string
     case Quoted = 'quoted';
     case Scheduled = 'scheduled';
     case Completed = 'completed';
+
+    public function label(): string
+    {
+        return ucfirst($this->value);
+    }
 }

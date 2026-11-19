@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,6 +28,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Every admin route is guarded by this gate (see routes/web.php).
+        Gate::define('manage-site', fn (User $user): bool => $user->is_admin === true);
+
         RateLimiter::for('contact-form', function (Request $request): Limit {
             return Limit::perMinutes(self::CONTACT_FORM_WINDOW_MINUTES, self::CONTACT_FORM_SUBMISSIONS_PER_WINDOW)
                 ->by($request->ip());

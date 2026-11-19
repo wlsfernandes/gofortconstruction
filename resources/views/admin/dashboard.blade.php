@@ -1,27 +1,31 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin · {{ config('app.name') }}</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="min-h-screen bg-stone-100 text-stone-900 antialiased">
-    <header class="bg-stone-900 text-white">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-            <span class="font-bold">Fort <span class="text-orange-400">Construction</span> admin</span>
-            <div class="flex items-center gap-4 text-sm">
-                <span>{{ auth()->user()->name }}</span>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="rounded-lg bg-white/10 px-3 py-1.5 hover:bg-white/20">Sign out</button>
-                </form>
-            </div>
-        </div>
-    </header>
-    <main class="mx-auto max-w-7xl px-4 py-10">
-        <h1 class="text-2xl font-semibold">Dashboard</h1>
-        <p class="mt-2 text-stone-600">You are signed in.</p>
-    </main>
-</body>
-</html>
+<x-layouts.admin title="Dashboard">
+    @php
+        $statistics = [
+            ['label' => 'New estimate requests', 'value' => $newRequestCount, 'route' => route('admin.contact-submissions.index', ['status' => 'new'])],
+            ['label' => 'Projects', 'value' => $projectCount, 'route' => route('admin.projects.index')],
+            ['label' => 'Published blog posts', 'value' => $publishedPostCount, 'route' => route('admin.blog-posts.index')],
+            ['label' => 'Testimonials', 'value' => $testimonialCount, 'route' => route('admin.testimonials.index')],
+        ];
+    @endphp
+
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        @foreach ($statistics as $statistic)
+            <a href="{{ $statistic['route'] }}" class="rounded-xl bg-white p-5 shadow-sm ring-1 ring-stone-200 hover:ring-orange-300">
+                <div class="text-3xl font-bold">{{ $statistic['value'] }}</div>
+                <div class="mt-1 text-sm text-stone-600">{{ $statistic['label'] }}</div>
+            </a>
+        @endforeach
+    </div>
+
+    <section class="mt-8 rounded-xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
+        <h2 class="mb-4 text-lg font-semibold">Newest requests</h2>
+        @forelse ($recentNewRequests as $contactSubmission)
+            <a href="{{ route('admin.contact-submissions.show', $contactSubmission) }}" class="flex items-center justify-between border-t border-stone-100 py-3 first:border-t-0 hover:text-orange-600">
+                <span class="font-medium">{{ $contactSubmission->name }}</span>
+                <span class="text-sm text-stone-500">{{ $contactSubmission->created_at->diffForHumans() }}</span>
+            </a>
+        @empty
+            <p class="text-stone-500">No new requests.</p>
+        @endforelse
+    </section>
+</x-layouts.admin>

@@ -69,9 +69,9 @@ class AuthenticationTest extends TestCase
         $this->get('/admin')->assertRedirect('/login');
     }
 
-    public function test_signed_in_user_sees_admin_dashboard(): void
+    public function test_signed_in_admin_sees_admin_dashboard(): void
     {
-        $user = User::factory()->create(['name' => 'Dana Builder']);
+        $user = User::factory()->admin()->create(['name' => 'Dana Builder']);
 
         $this->actingAs($user)
             ->get('/admin')
